@@ -25,7 +25,7 @@ def board():
 
 
 @app.route("/drama", methods=["POST"])
-def movie_post():
+def drama_post():
     url_receive = request.form['url_give']
     star_receive = request.form['star_give']
     comment_receive = request.form['comment_give']
@@ -58,18 +58,18 @@ def movie_post():
     return jsonify({'msg':'드라마 등록 완료!'})
 
 @app.route("/drama", methods=["GET"])
-def movie_get():
+def drama_get():
     movies_list = list(db.drama.find({},{'_id':False}))
     return jsonify({'movies':movies_list})
 # POST : 삭제 버튼 서버 구현
 @app.route("/drama/delete", methods=["POST"])
-def movie_delete():
+def drama_delete():
     movies_receive = request.form["button_delete"]
     db.drama.delete_one({'title': movies_receive})
     return jsonify({'msg': '드라마 삭제 완료!'})
 
 @app.route("/board/data", methods=["POST"])
-def homework_post():
+def board_post():
     name_receive = request.form['name_give']
     bcomment_receive = request.form['bcomment_give']
     selected_receive = request.form['selected_give']
