@@ -95,7 +95,7 @@
             $('#cards-box').empty()
             $.ajax({
                 type: 'GET',
-                url: '/movie',
+                url: '/drama',
                 data: {},
                 success: function (response) {
                     let rows = response['movies']
@@ -135,7 +135,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '/movie',
+                url: '/drama',
                 data: {url_give: url, star_give: star, comment_give: comment},
                 success: function (response) {
                     alert(response['msg'])
@@ -147,7 +147,7 @@
         function delete_box(title){
             $.ajax({
                 type: "POST",
-                url: "/movie/delete",
+                url: "/drama/delete",
                 data: {'button_delete': title},
                 success: function (response) {
                     alert(response["msg"])
@@ -168,13 +168,13 @@
 
 <body>
 <div class="mytitle">
-    <h1>내 생애 최고의 영화들</h1>
-    <button onclick="open_box()">영화 기록하기</button>
+    <h1>왓차 드라마 저장소</h1>
+    <button onclick="open_box()">드라마 기록하기</button>
 </div>
 <div class="mypost" id="post-box">
     <div class="form-floating mb-3">
         <input id="url" type="email" class="form-control" placeholder="name@example.com">
-        <label>영화URL</label>
+        <label>드라마URL</label>
     </div>
     <div class="input-group mb-3">
         <label class="input-group-text" for="inputGroupSelect01">별점</label>
