@@ -138,6 +138,7 @@
                         let desc = rows[i]['desc']
                         let star = rows[i]['star']
                         let comment = rows[i]['comment']
+                        let avg_star = rows[i]['avg_star']
 
                         let star_image = '⭐'.repeat(star)
 
@@ -150,6 +151,7 @@
                                                     <p class="card-text">${desc}</p>
                                                     <p>${star_image}</p>
                                                     <p class="mycomment">${comment}</p>
+                                                    <p>${avg_star}</p>
                                                     <button type="button" class="btn btn-outline-danger" onclick="delete_box('${title}')">삭제</button>
                                                 </div>
                                             </div>

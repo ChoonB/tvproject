@@ -39,7 +39,10 @@ def drama_post():
     og_image = soup.select_one('meta[property="og:image"]')
     og_title = soup.select_one('meta[property="og:title"]')
     og_description = soup.select_one('meta[property="og:description"]')
+    star_rank = soup.select_one(
+        '#root > div > div.css-1xm32e0 > section > div > div.css-10ofaaw > div > section > div.css-1p7n6er-Pane.e1svyhwg15 > div > div > div > div > div.css-og1gu8-ContentRatings.e1svyhwg20')
 
+    avg_rank = star_rank.text
     image = og_image['content']
     title = og_title['content'].rstrip(' - 왓챠피디아')
     description = og_description['content']
@@ -50,7 +53,8 @@ def drama_post():
         'title':title,
         'desc':description,
         'star':star_receive,
-        'comment':comment_receive
+        'comment':comment_receive,
+        'avg_star':avg_rank
     }
 
     db.drama.insert_one(doc)
