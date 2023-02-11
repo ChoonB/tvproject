@@ -19,6 +19,10 @@ def home():
 def accounts():
    return render_template('index.html')
 
+@app.route('/board')
+def board():
+   return render_template('board.html')
+
 
 @app.route("/drama", methods=["POST"])
 def movie_post():
@@ -62,6 +66,29 @@ def movie_delete():
     movies_receive = request.form["button_delete"]
     db.drama.delete_one({'title': movies_receive})
     return jsonify({'msg': '드라마 삭제 완료!'})
+
+@app.route("/board/data", methods=["POST"])
+def homework_post():
+    name_receive = request.form['name_give']
+    bcomment_receive = request.form['bcomment_give']
+    selected_receive = request.form['selected_give']
+
+    doc = {
+        'name': name_receive,
+        'bcomment': bcomment_receive,
+        'selected': selected_receive
+    }
+
+    db.board.insert_one(doc)
+
+    return jsonify({'msg':'저장 완료!'})
+
+@app.route("/board/data", methods=["GET"])
+def board_get():
+    board_list = list(db.board.find({}, {'_id': False}))
+    main_list = list(db.drama.find({}, {'_id': False}))
+    return jsonify({'board':board_list,'main':main_list})
+
 
 if __name__ == '__main__':
    app.run('0.0.0.0', port=5000, debug=True)
