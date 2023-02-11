@@ -45,6 +45,7 @@ def movie_post():
     description = og_description['content']
 
     doc = {
+        'url':url_receive,
         'image':image,
         'title':title,
         'desc':description,

@@ -132,6 +132,7 @@
                 success: function (response) {
                     let rows = response['movies']
                     for(let i = 0; i < rows.length; i++) {
+                        let url = rows[i]['url']
                         let image = rows[i]['image']
                         let title = rows[i]['title']
                         let desc = rows[i]['desc']
@@ -142,8 +143,8 @@
 
                         let temp_html = `<div class="col">
                                             <div class="card h-100">
-                                                <img src="${image}"
-                                                     class="card-img-top">
+                                                <a href="${url}"><img src="${image}"
+                                                     class="card-img-top"></a>
                                                 <div class="card-body">
                                                     <h5 class="card-title">${title}</h5>
                                                     <p class="card-text">${desc}</p>
