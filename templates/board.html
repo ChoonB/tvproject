@@ -89,6 +89,7 @@
                 data: {},
                 success: function (response) {
                     $('#temp').text(response['temp'])
+                    $('#weather_icon').attr("src", response['icon']);
                 }
             })
         }
@@ -180,7 +181,7 @@
 <body>
     <div class="mypic">
         <h1>드라마 후기</h1>
-        <p>현재기온: <span id="temp">36</span>도</p>
+        <p>현재 날씨: <img id="weather_icon" src=""/> <span id="temp">36</span>도</p>
         <div class="btntitle">
             <button onclick="location.href='/post'">메인으로</button>
         </div>
