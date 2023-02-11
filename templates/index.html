@@ -117,7 +117,7 @@
                                                     <p class="card-text">${desc}</p>
                                                     <p>${star_image}</p>
                                                     <p class="mycomment">${comment}</p>
-                                                    <button onclick="delete_box('${title}')">삭제</button>
+                                                    <button type="button" class="btn btn-outline-danger" onclick="delete_box('${title}')">삭제</button>
                                                 </div>
                                             </div>
                                         </div>`
@@ -169,6 +169,8 @@
 <body>
 <div class="mytitle">
     <h1>왓차 드라마 저장소</h1>
+    <h5>사용 방법</h5>
+    <p>자신이 원하는 url주소를 복사하시고 평점, 후기 남기시면 됩니다. 등록 된 것 중 필요 없는 영화는 삭제 버튼 누르면 사라잡니다.</p>
     <button onclick="open_box()">드라마 기록하기</button>
 </div>
 <div class="mypost" id="post-box">
@@ -179,7 +181,7 @@
     <div class="input-group mb-3">
         <label class="input-group-text" for="inputGroupSelect01">별점</label>
         <select class="form-select" id="star">
-            <option selected>-- 선택하기 --</option>
+            <option selected>-- 별점 선택하기 --</option>
             <option value="1">⭐</option>
             <option value="2">⭐⭐</option>
             <option value="3">⭐⭐⭐</option>
