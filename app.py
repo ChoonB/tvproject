@@ -41,7 +41,7 @@ def movie_post():
     og_description = soup.select_one('meta[property="og:description"]')
 
     image = og_image['content']
-    title = og_title['content']
+    title = og_title['content'].rstrip(' - 왓챠피디아')
     description = og_description['content']
 
     doc = {
