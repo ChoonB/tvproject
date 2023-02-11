@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 def home():
    return render_template('index.html')
 
-@app.route("/movie", methods=["POST"])
+@app.route("/drama", methods=["POST"])
 def movie_post():
     url_receive = request.form['url_give']
     star_receive = request.form['star_give']
@@ -45,18 +45,18 @@ def movie_post():
 
     db.drama.insert_one(doc)
 
-    return jsonify({'msg':'영화 등록 완료!'})
+    return jsonify({'msg':'드라마 등록 완료!'})
 
-@app.route("/movie", methods=["GET"])
+@app.route("/drama", methods=["GET"])
 def movie_get():
     movies_list = list(db.drama.find({},{'_id':False}))
     return jsonify({'movies':movies_list})
 # POST : 삭제 버튼 서버 구현
-@app.route("/movie/delete", methods=["POST"])
+@app.route("/drama/delete", methods=["POST"])
 def movie_delete():
     movies_receive = request.form["button_delete"]
     db.drama.delete_one({'title': movies_receive})
-    return jsonify({'msg': '영화 삭제 완료!'})
+    return jsonify({'msg': '드라마 삭제 완료!'})
 
 if __name__ == '__main__':
    app.run('0.0.0.0', port=5000, debug=True)
