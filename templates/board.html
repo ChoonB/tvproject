@@ -83,8 +83,8 @@
 
             $.ajax({
                 type: 'POST',
-                url: '/homework',
-                data: {name_give: name, comment_give: comment, selected_give: selected},
+                url: '/board',
+                data: {name_give: name, bcomment_give: comment, selected_give: selected},
                 success: function (response) {
                     alert(response['msg'])
                     window.location.reload()
@@ -125,10 +125,10 @@
         function show_comment() {
             $.ajax({
                 type: "GET",
-                url: "/homework",
+                url: "/board",
                 data: {},
                 success: function(response ) {
-                    let rows = response['homework']
+                    let rows = response['board']
                     let row = response['main']
                     for (let i = 0; i < rows.length; i++) {
                         let name = rows[i]['name']
