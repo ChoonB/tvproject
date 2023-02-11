@@ -19,6 +19,23 @@
         * {
             font-family: 'Noto Serif KR', serif;
         }
+        .btntitle > button {
+            width: 200px;
+            height: 50px;
+
+            background-color: transparent;
+            color: white;
+
+            border-radius: 50px;
+            border: 1px solid white;
+
+            margin-top: 10px;
+        }
+
+        .btntitle > button:hover {
+            border: 2px solid white;
+        }
+
         .mypic {
             width: 100%;
             height: 300px;
@@ -164,6 +181,9 @@
     <div class="mypic">
         <h1>드라마 후기</h1>
         <p>현재기온: <span id="temp">36</span>도</p>
+        <div class="btntitle">
+            <button onclick="location.href='/post'">메인으로</button>
+        </div>
     </div>
 
     <div class="mypost">
