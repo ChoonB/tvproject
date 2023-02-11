@@ -12,7 +12,11 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-    <title>초미니홈피 - 팬명록</title>
+    <meta property="og:title" content="드라마 저장소" />
+	<meta property="og:description" content="나만 알고있는 인생드라마 하나 쯤 있으신가요? 드라마저장소에서 공유해보세요"/>
+	<meta property="og:image" content="이미지URL"/>
+
+    <title>왓챠 드라마 게시판</title>
 
    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
     <style>
@@ -109,35 +113,6 @@
                 }
             })
         }
-
-        // function show_comment() {
-        //     $.ajax({
-        //         type: "GET",
-        //         url: "/homework",
-        //         data: {},
-        //         success: function (response) {
-        //             let rows = response['homework']
-        //             let row = response['title']
-        //             for (let i = 0; i < rows.length; i++) {
-        //                 let name = rows[i]['name']
-        //                 let comment = rows[i]['comment']
-        //                 let  title = row[i]['title']
-        //                 let temp_html2 = ``
-        //
-        //                 let temp_html = `<div class="card">
-        //                                      <div class="card-body">
-        //                                     <blockquote class="blockquote mb-0">
-        //                                     <p>${comment}</p>
-        //                                     <footer class="blockquote-footer">${name}</footer>
-        //                                     </blockquote>
-        //                                     </div>
-        //                                     </div>`
-        //
-        //                 $('#comment-list').append(temp_html)
-        //             }
-        //         }
-        //     });
-        // }
 
 
         function show_comment() {
