@@ -1,0 +1,6 @@
+with open("mongodb.txt", "r") as f:
+    dburl = f.read()
+
+from pymongo import MongoClient
+client = MongoClient(dburl)
+db = client.dbsparta
