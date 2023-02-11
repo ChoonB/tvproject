@@ -13,7 +13,12 @@ from bs4 import BeautifulSoup
 
 @app.route('/')
 def home():
+   return render_template('home.html')
+
+@app.route('/index')
+def accounts():
    return render_template('index.html')
+
 
 @app.route("/drama", methods=["POST"])
 def movie_post():
